@@ -1,6 +1,6 @@
-package com.example.demo.controllers;
+package com.example.demo.contract.interfaces.rest;
 
-import com.example.demo.entities.Event;
+import com.example.demo.contract.domain.model.entities.Event;
 import com.example.demo.services.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

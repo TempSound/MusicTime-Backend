@@ -1,5 +1,6 @@
-package com.example.demo.entities;
+package com.example.demo.feedback.domain.model.entities;
 
+import com.example.demo.IAM.domain.model.entities.User;
 import jakarta.persistence.*;
 import lombok.Data;
 

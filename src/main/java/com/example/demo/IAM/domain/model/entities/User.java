@@ -1,4 +1,4 @@
-package com.example.demo.entities;
+package com.example.demo.IAM.domain.model.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -37,4 +37,16 @@ public class User {
     private String businessName;
     private String businessType;
     private String businessLocation;
+
+
+    @Transient // This annotation is used because the token is not a column in the database
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
 }

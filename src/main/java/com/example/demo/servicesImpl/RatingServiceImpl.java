@@ -1,6 +1,6 @@
 package com.example.demo.servicesImpl;
 
-import com.example.demo.entities.Rating;
+import com.example.demo.feedback.domain.model.entities.Rating;
 import com.example.demo.repositories.RatingRepository;
 import com.example.demo.services.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;

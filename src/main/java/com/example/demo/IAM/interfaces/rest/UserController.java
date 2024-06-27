@@ -1,11 +1,8 @@
-package com.example.demo.controllers;
+package com.example.demo.IAM.interfaces.rest;
 
-import com.example.demo.entities.User;
+import com.example.demo.IAM.domain.model.entities.User;
 import com.example.demo.services.UserService;
-import jakarta.persistence.GeneratedValue;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 

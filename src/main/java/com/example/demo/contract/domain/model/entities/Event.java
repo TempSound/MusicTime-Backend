@@ -1,10 +1,11 @@
-package com.example.demo.entities;
+package com.example.demo.contract.domain.model.entities;
 
+import com.example.demo.IAM.domain.model.entities.User;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 @Data
 @Entity
 @Table(name = "events")

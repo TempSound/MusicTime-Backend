@@ -1,6 +1,6 @@
 package com.example.demo.servicesImpl;
 
-import com.example.demo.entities.Event;
+import com.example.demo.contract.domain.model.entities.Event;
 import com.example.demo.exceptions.ResourceNotFoundException;
 import com.example.demo.repositories.EventRepository;
 import com.example.demo.services.EventService;

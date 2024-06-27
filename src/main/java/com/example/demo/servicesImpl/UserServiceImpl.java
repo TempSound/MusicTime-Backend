@@ -1,22 +1,27 @@
 package com.example.demo.servicesImpl;
 
-import com.example.demo.entities.User;
+import com.example.demo.IAM.domain.model.entities.User;
 import com.example.demo.exceptions.ResourceNotFoundException;
 import com.example.demo.repositories.UserRepository;
 import com.example.demo.services.UserService;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.Base64;
+import java.security.Key;
+import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
+
+    private Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
     @Override
     public User create(User user) {
@@ -77,8 +82,21 @@ public class UserServiceImpl implements UserService {
         if(!userFound.getPassword().equals(password)){
             throw new ResourceNotFoundException("Password invalid");
         }
+
+        // Después de validar el usuario, genera un token para él
+        String jws = Jwts.builder()
+                .setSubject(userFound.getEmail())
+                .claim("id", userFound.getId()) // Agrega el ID del usuario como una reclamación en el token
+                .setIssuedAt(new Date())
+                .signWith(key)
+                .compact();
+
+        // Agrega el token al usuario y lo devuelve
+        userFound.setToken(jws);
+
         return userFound;
     }
+
 
     @Override
     public User getUserById(Long id) {
