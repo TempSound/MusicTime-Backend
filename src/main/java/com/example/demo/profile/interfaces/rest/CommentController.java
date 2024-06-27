@@ -1,6 +1,6 @@
-package com.example.demo.controllers;
+package com.example.demo.profile.interfaces.rest;
 
-import com.example.demo.entities.Comment;
+import com.example.demo.profile.domain.model.entities.Comment;
 import com.example.demo.services.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

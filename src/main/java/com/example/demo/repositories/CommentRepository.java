@@ -1,10 +1,9 @@
 package com.example.demo.repositories;
 
-import com.example.demo.entities.Comment;
+import com.example.demo.profile.domain.model.entities.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
